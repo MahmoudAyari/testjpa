@@ -18,7 +18,17 @@ public class JpaTest {
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
 		try {
-			// TODO
+			
+	
+			Team team = new Team("team1");
+			manager.persist(team);
+			
+			Developer developer = new Developer("a","a", team);
+			manager.persist(developer);
+			
+			Task t = new Task("t","t","t","t","t",developer);
+			manager.persist(t);
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -28,4 +38,7 @@ public class JpaTest {
 		factory.close();
 	}
 
+
+	
+	
 }

@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Table(name="BACKLOG")
 public class Backlog implements Serializable{
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	

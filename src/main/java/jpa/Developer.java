@@ -2,6 +2,10 @@ package jpa;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -13,20 +17,32 @@ import javax.persistence.*;
 public class Developer implements Serializable {
 
 	
-	@Id
+	
 	private int id;
+	
 	private String name;
 	private String surname ;
+	
 	private Team team;
-	@ManyToOne
-	public Team getTeam() {
-		return team;
-	}
-	public void setTeam(Team team) {
-		this.team = team;
-	}
+	
+	
+	private List<Task> tasks = new ArrayList<Task>();
+	
+	@Id
+    @GeneratedValue
 	public int getId() {
 		return id;
+	}
+	
+	public Developer(){
+		
+	}
+	public Developer(String name, String surname, Team team) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.team= team;
+		
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -44,6 +60,23 @@ public class Developer implements Serializable {
 		this.surname = surname;
 	}
 	
+	@OneToMany(mappedBy = "developer", cascade = CascadeType.PERSIST)
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+    
+    @ManyToOne
+	public Team getTeam() {
+		return team;
+	}
+
+	public void setTeam(Team team) {
+		this.team = team;
+	}
 	
 	
 	

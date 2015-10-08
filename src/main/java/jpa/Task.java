@@ -12,18 +12,47 @@ import javax.persistence.*;
 @Table(name="TASK")
 public class Task implements Serializable{
 
-	@Id
+	
 	private int id;
 	private String name;
 	private String description;
 	private String priorite;
 	private String state;
 	private String duration;
+	private Developer developer;
 	private static final long serialVersionUID = 1L;
 
+	
+	
 	public Task() {
 		super();
 	}   
+
+	public Task(String name, String description, String priorite, String state, String duration, Developer developer) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.priorite = priorite;
+		this.state = state;
+		this.duration = duration;
+		this.developer = developer;
+	}
+
+
+
+
+	@ManyToOne
+	public Developer getDeveloper() {
+		return developer;
+	}
+
+	public void setDeveloper(Developer developer) {
+		this.developer = developer;
+	}
+	
+	
+	@Id
+    @GeneratedValue
 	public int getId() {
 		return this.id;
 	}
