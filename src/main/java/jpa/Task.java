@@ -20,6 +20,7 @@ public class Task implements Serializable{
 	private String state;
 	private String duration;
 	private Developer developer;
+	private Sprint sprint;
 	private static final long serialVersionUID = 1L;
 
 	
@@ -28,7 +29,7 @@ public class Task implements Serializable{
 		super();
 	}   
 
-	public Task(String name, String description, String priorite, String state, String duration, Developer developer) {
+	public Task(String name, String description, String priorite, String state, String duration, Developer developer,Sprint sprint) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -36,6 +37,7 @@ public class Task implements Serializable{
 		this.state = state;
 		this.duration = duration;
 		this.developer = developer;
+		this.sprint=sprint;
 	}
 
 
@@ -94,5 +96,15 @@ public class Task implements Serializable{
 	public void setDuration(String duration) {
 		this.duration = duration;
 	}
+	@ManyToOne
+	public Sprint getSprint() {
+		return sprint;
+	}
+
+	public void setSprint(Sprint sprint) {
+		this.sprint = sprint;
+	}
+	
+	
    
 }

@@ -26,7 +26,10 @@ public class JpaTest {
 			Developer developer = new Developer("a","a", team);
 			manager.persist(developer);
 			
-			Task t = new Task("t","t","t","t","t",developer);
+			Sprint sprint = new Sprint("sprint1");
+			manager.persist(sprint);
+			
+			Task t = new Task("t","t","t","t","t",developer,sprint);
 			manager.persist(t);
 			
 
