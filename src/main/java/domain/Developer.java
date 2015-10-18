@@ -1,4 +1,4 @@
-package jpa;
+package domain;
 
 import java.io.Serializable;
 import java.lang.String;
@@ -14,6 +14,9 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="DEVELOPER")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="TYPE", discriminatorType=DiscriminatorType.STRING,length=20)
+@DiscriminatorValue("D")
 public class Developer implements Serializable {
 
 	
@@ -22,7 +25,6 @@ public class Developer implements Serializable {
 	
 	private String name;
 	private String surname ;
-	
 	private Team team;
 	
 	
@@ -77,6 +79,8 @@ public class Developer implements Serializable {
 	public void setTeam(Team team) {
 		this.team = team;
 	}
+
+	
 	
 	
 	

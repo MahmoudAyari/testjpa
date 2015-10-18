@@ -1,4 +1,4 @@
-package jpa;
+package domain;
 
 import java.io.Serializable;
 import java.lang.String;

@@ -1,0 +1,14 @@
+/home/ayari/workspace/testjpa/src/main/java/dao/DeveloperDao.java
+/home/ayari/workspace/testjpa/src/main/java/jpa/JpaTest.java
+/home/ayari/workspace/testjpa/src/main/java/domain/Developer.java
+/home/ayari/workspace/testjpa/src/main/java/dao/TaskDao.java
+/home/ayari/workspace/testjpa/src/main/java/domain/Sprint.java
+/home/ayari/workspace/testjpa/src/main/java/domain/Task.java
+/home/ayari/workspace/testjpa/src/main/java/domain/MobileDeveloper.java
+/home/ayari/workspace/testjpa/src/main/java/domain/Backlog.java
+/home/ayari/workspace/testjpa/src/main/java/service/DeveloperService.java
+/home/ayari/workspace/testjpa/src/main/java/domain/Team.java
+/home/ayari/workspace/testjpa/src/main/java/dao/TeamDao.java
+/home/ayari/workspace/testjpa/src/main/java/dao/Manager.java
+/home/ayari/workspace/testjpa/src/main/java/dao/DaoInterface.java
+/home/ayari/workspace/testjpa/src/main/java/dao/SprintDao.java

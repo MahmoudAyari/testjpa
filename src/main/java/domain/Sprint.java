@@ -1,35 +1,35 @@
-package jpa;
+package domain;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
-import java.util.*;
 
 /**
  * Entity implementation class for Entity: Task
  *
  */
 @Entity
-@Table(name="TEAM")
-public class Team implements Serializable {
+@Table(name="SPRINT")
+public class Sprint implements Serializable {
 
 	
 	
 	private int id;
 	
 	private String name;
+	
+	private List<Task> tasks = new ArrayList<Task>();
 
-	private List<Developer> developers = new ArrayList<Developer>();
 	
-	
-	
-	
-	public Team() {
+	public Sprint() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-
-	public Team( String name) {
+	
+	
+	public Sprint(String name) {
 		super();
 		this.name = name;
 	}
@@ -52,16 +52,14 @@ public class Team implements Serializable {
 		this.name = name;
 	}
 	
-	
-	@OneToMany(mappedBy = "team", cascade = CascadeType.PERSIST)
-	public List<Developer> getDevelopers() {
-		return developers;
+	@OneToMany(mappedBy = "sprint", cascade = CascadeType.PERSIST)
+	public List<Task> getTasks() {
+		return tasks;
 	}
 
-	public void setDevelopers(List<Developer> developers) {
-		this.developers = developers;
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
 	}
-	
 	
 	
 	
