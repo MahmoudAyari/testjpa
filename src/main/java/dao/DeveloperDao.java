@@ -46,9 +46,14 @@ public class DeveloperDao implements DaoInterface<Developer, Serializable> {
 		return entityManager.find(Developer.class, id);
 	}
 
-	public void delete(Developer entity) {
-		entity = this.entityManager.merge(entity);
-		this.entityManager.remove(entity);
+	public void delete(int id) {
+		
+		Developer dev = new Developer();
+		dev = entityManager.find(Developer.class, id);
+		dev.getName();
+		System.out.println(dev.getName());
+		entityManager.remove(entityManager.find(Developer.class, id));
+		
 	}
 
 	public List<Developer> findAll() {

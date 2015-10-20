@@ -17,7 +17,7 @@ public interface DaoInterface<T, Id extends Serializable> {
 
 	public T findById(int id);
 
-	public void delete(T entity);
+	public void delete(int id);
 
 	public List<T> findAll();
 

@@ -45,11 +45,11 @@ public class TaskDao implements DaoInterface<Task, Serializable> {
 		// TODO Auto-generated method stub
 		return entityManager.find(Task.class, id);
 	}
-
-	public void delete(Task entity) {
-		entity = this.entityManager.merge(entity);
-		this.entityManager.remove(entity);
-	}
+//
+//	public void delete(Task entity) {
+//		entity = this.entityManager.merge(entity);
+//		this.entityManager.remove(entity);
+//	}
 
 	public List<Task> findAll() {
 		Query query = entityManager.createQuery(SELECT_QUERY);
@@ -69,6 +69,11 @@ public class TaskDao implements DaoInterface<Task, Serializable> {
 	public void update(Task entity) {
 		entityManager.merge(entity);
 
+	}
+
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

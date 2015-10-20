@@ -46,10 +46,10 @@ public class TeamDao implements DaoInterface<Team, Serializable> {
 		return entityManager.find(Team.class, id);
 	}
 
-	public void delete(Team entity) {
-		entity = this.entityManager.merge(entity);
-		this.entityManager.remove(entity);
-	}
+//	public void delete(Team entity) {
+//		entity = this.entityManager.merge(entity);
+//		this.entityManager.remove(entity);
+//	}
 
 	public List<Team> findAll() {
 		Query query = entityManager.createQuery(SELECT_QUERY);
@@ -69,6 +69,11 @@ public class TeamDao implements DaoInterface<Team, Serializable> {
 	public void update(Team entity) {
 		entityManager.merge(entity);
 
+	}
+
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

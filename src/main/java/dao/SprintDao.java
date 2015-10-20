@@ -46,10 +46,10 @@ public class SprintDao implements DaoInterface<Sprint, Serializable> {
 		return entityManager.find(Sprint.class, id);
 	}
 
-	public void delete(Sprint entity) {
-		entity = this.entityManager.merge(entity);
-		this.entityManager.remove(entity);
-	}
+//	public void delete(Sprint entity) {
+//		entity = this.entityManager.merge(entity);
+//		this.entityManager.remove(entity);
+//	}
 
 	public List<Sprint> findAll() {
 		Query query = entityManager.createQuery(SELECT_QUERY);
@@ -70,6 +70,11 @@ public class SprintDao implements DaoInterface<Sprint, Serializable> {
 	public void update(Sprint entity) {
 		entityManager.merge(entity);
 
+	}
+
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
